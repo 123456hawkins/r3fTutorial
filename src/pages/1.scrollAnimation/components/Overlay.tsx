@@ -11,7 +11,7 @@ const Section = (props:SectionProps) => {
     <section className={`h-screen flex flex-col justify-center p-10 ${props.right ? "items-end" : "items-start"}`}>
       <div className="w-1/2 flex items-center justify-center">
         <div className="max-w-sm w-full">
-          <div className="bg-white  rounded-lg px-8 py-12">{props.children}</div>
+          <div className="bg-white  rounded-lg px-1 py-1">{props.children}</div>
         </div>
       </div>
     </section>
@@ -40,7 +40,7 @@ export const Overlay = () => {
             <li className="text-gray-500">🧑‍🏫 How to learn</li>
             <li className="text-gray-500">📦 How to deliver</li>
           </ul>
-          <p className="animate-bounce  mt-6">↓</p>
+          <p className="animate-bounce  mt-6 text-gray-500" >↓</p>
         </Section>
         <Section right opacity={opacitySecondSection}>
           <h1 className="font-semibold font-serif text-2xl text-gray-500">Here are my skillsets 🔥</h1>
@@ -63,7 +63,7 @@ export const Overlay = () => {
             <li className="text-gray-500">NestJS</li>
             <li className="text-gray-500">PostgreSQL</li>
           </ul>
-          <p className="animate-bounce  mt-6">↓</p>
+          <p className="animate-bounce  mt-6 text-gray-500">↓</p>
         </Section>
         <Section opacity={opacityLastSection}>
           <h1 className="font-semibold font-serif text-2xl">🤙 Call me maybe?</h1>
