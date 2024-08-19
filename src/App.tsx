@@ -34,6 +34,10 @@ const items:MenuItem[]=[
     key: 'scrollPage',
 
   },
+  {
+    label:"第二课:人物动画",
+    key:'animatePerson'
+  }
 ]
 function App() {
   const [current,setCurrent]=useState('scrollAnimation')
