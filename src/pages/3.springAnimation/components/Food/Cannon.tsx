@@ -7,6 +7,7 @@ import { useGLTF } from "@react-three/drei";
 import React, { useRef } from "react";
 
 import { Candy } from "./Candy";
+import { hawkinsMaterials } from "@/utlis/hawkinsmaterials";
 
 export default function Cannon(props) {
   const group = useRef();
@@ -40,62 +41,53 @@ export default function Cannon(props) {
   return (
     <group ref={group} {...props} dispose={null}>
       <group position={[0, 0, 0]}>
-        <mesh
-          geometry={nodes.cannonMobile_8angles_1.geometry}
-          material={nodes.cannonMobile_8angles_1.material}
-        />
-        <mesh
-          geometry={nodes.cannonMobile_8angles_2.geometry}
-          material={nodes.cannonMobile_8angles_2.material}
-        />
+        <mesh geometry={nodes.cannonMobile_8angles_1.geometry}>
+          <meshStandardMaterial {...hawkinsMaterials.brown} />
+        </mesh>
+        <mesh geometry={nodes.cannonMobile_8angles_2.geometry}>
+          <meshStandardMaterial {...hawkinsMaterials.brown} />
+        </mesh>
         <group position={[-0.22, 0.13, 0.26]}>
-          <mesh
-            geometry={nodes.wheel_backLeft_1.geometry}
-            material={nodes.wheel_backLeft_1.material}
-          />
-          <mesh
-            geometry={nodes.wheel_backLeft_2.geometry}
-            material={nodes.wheel_backLeft_2.material}
-          />
+          <mesh geometry={nodes.wheel_backLeft_1.geometry}>
+            <meshStandardMaterial {...hawkinsMaterials.metal} />
+          </mesh>
+          <mesh geometry={nodes.wheel_backLeft_2.geometry}>
+            <meshStandardMaterial {...hawkinsMaterials.brown} />
+          </mesh>
         </group>
         <group position={[0.22, 0.13, 0.26]} rotation={[Math.PI, 0, Math.PI]}>
-          <mesh
-            geometry={nodes.wheel_backLeft_1.geometry}
-            material={nodes.wheel_backLeft_1.material}
-          />
-          <mesh
-            geometry={nodes.wheel_backLeft_2.geometry}
-            material={nodes.wheel_backLeft_2.material}
-          />
+          <mesh geometry={nodes.wheel_backLeft_1.geometry}>
+            <meshStandardMaterial {...hawkinsMaterials.metal} />
+          </mesh>
+          <mesh geometry={nodes.wheel_backLeft_2.geometry}>
+            <meshStandardMaterial {...hawkinsMaterials.brown} />
+          </mesh>
         </group>
         <group position={[-0.22, 0.13, -0.2]}>
-          <mesh
-            geometry={nodes.wheel_backLeft_1.geometry}
-            material={nodes.wheel_backLeft_1.material}
-          />
-          <mesh
-            geometry={nodes.wheel_backLeft_2.geometry}
-            material={nodes.wheel_backLeft_2.material}
-          />
+          <mesh geometry={nodes.wheel_backLeft_1.geometry}>
+            <meshStandardMaterial {...hawkinsMaterials.metal} />
+          </mesh>
+          <mesh geometry={nodes.wheel_backLeft_2.geometry}>
+            <meshStandardMaterial {...hawkinsMaterials.brown} />
+          </mesh>
         </group>
         <group position={[0.22, 0.13, -0.2]} rotation={[Math.PI, 0, Math.PI]}>
-          <mesh
-            geometry={nodes.wheel_backLeft_1.geometry}
-            material={nodes.wheel_backLeft_1.material}
-          />
-          <mesh
-            geometry={nodes.wheel_backLeft_2.geometry}
-            material={nodes.wheel_backLeft_2.material}
-          />
+          <mesh geometry={nodes.wheel_backLeft_1.geometry}>
+            <meshStandardMaterial {...hawkinsMaterials.metal} />
+          </mesh>
+          <mesh geometry={nodes.wheel_backLeft_2.geometry}>
+            <meshStandardMaterial {...hawkinsMaterials.brown} />
+          </mesh>
         </group>
         <animated.mesh
           scale-x={cannonScale}
           scale-y={cannonScale}
           scale-z={cannonScale}
           geometry={nodes.barrel_2.geometry}
-          material={nodes.barrel_2.material}
           position={[0, 0.45, -0.07]}
-        />
+        >
+          <meshStandardMaterial {...hawkinsMaterials.metal} />
+        </animated.mesh>
       </group>
       <animated.group position-z={candyZ}>
         <Candy

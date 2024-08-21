@@ -7,6 +7,7 @@ import { useGLTF } from "@react-three/drei";
 import React, { useRef } from "react";
 import { Ketchup } from "./Ketchup";
 import { Mustard } from "./Mustard";
+import { hawkinsMaterials } from "@/utlis/hawkinsmaterials";
 
 export function HotDog(props) {
   const group = useRef();
@@ -72,28 +73,32 @@ export function HotDog(props) {
 
   return (
     <group ref={group} {...props} dispose={null}>
-      <mesh geometry={nodes.hotDog.geometry} material={materials.brownLight}>
+      <mesh geometry={nodes.hotDog.geometry}>
+        <meshStandardMaterial {...hawkinsMaterials.brown} />
         <group position={[0, 0.14, 0]} rotation={[Math.PI, 0, -Math.PI]}>
           <animated.mesh
             geometry={nodes.Mesh_sauce.geometry}
-            material={materials.yellow}
             scale-y={mustardSauceScale}
             scale-z={mustardSauceScale}
-          />
+          >
+            <meshStandardMaterial {...hawkinsMaterials.yellow} />
+          </animated.mesh>
           <animated.mesh
             geometry={nodes.Mesh_sauce_1.geometry}
-            material={materials.red}
             scale-y={ketchupSauceScale}
             scale-z={ketchupSauceScale}
-          />
+          >
+            <meshStandardMaterial {...hawkinsMaterials.red} />
+          </animated.mesh>
         </group>
         <mesh
           geometry={nodes.sausage.geometry}
-          material={materials.brown}
           position={[-0.29, 0.09, 0]}
           rotation={[Math.PI / 2, 0, -Math.PI / 2]}
           scale={0.93}
-        />
+        >
+          <meshStandardMaterial {...hawkinsMaterials.brownDark} />
+        </mesh>
       </mesh>
       <Ketchup rotation-x={ketchupRotationX} position={ketchupPosition} />
       <Mustard rotation-x={mustardRotationX} position={mustardPosition} />
