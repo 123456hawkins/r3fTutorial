@@ -41,6 +41,10 @@ const items:MenuItem[]=[
   {
     label:"第三课:spring动画",
     key:'springAnimation'
+  },
+  {
+    label:"第四课:场景优化",
+    key:'betterScene'
   }
 ]
 function App() {

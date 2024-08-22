@@ -5,8 +5,6 @@ import { Carousel } from "./components/Carousel";
 import { Depth, LayerMaterial, Noise } from "lamina";
 import { useRef } from "react";
 import { Mesh } from "three";
-// import { Globals } from "@react-spring/three";
-// Globals.assign({frameLoop:'always'})
 const BG_SPEED=0.3
 const Background = () => {
   const ref = useRef<Mesh>(null!);

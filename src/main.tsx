@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ScrollPage } from "./pages/1.scrollAnimation/ScrollPage.js";
 import { AnimatePerson } from "./pages/2.animatePerson/AnimatePerson.js";
 import { SpringAnimation } from "./pages/3.springAnimation/SpringAnimation.js";
+import { BetterScene } from "./pages/4.betterScene/BetterScene.js";
 const rootElement = document.getElementById("root");
 createRoot(rootElement as HTMLElement).render(
   <StrictMode>
@@ -15,6 +16,7 @@ createRoot(rootElement as HTMLElement).render(
           <Route path="scrollPage" element={<ScrollPage />}></Route>
           <Route path="animatePerson" element={<AnimatePerson/>}></Route>
           <Route path="springAnimation" element={<SpringAnimation/>}></Route>
+          <Route path="betterScene" element={<BetterScene/>}></Route>
         </Route>
       </Routes>
     </BrowserRouter>
